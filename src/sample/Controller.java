@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.TextFlow;
+import sample.viewPackage.buildingView.ThirstScrollPane;
 
 public class Controller {
 
@@ -21,5 +22,8 @@ public class Controller {
 
     public void initialize(){
         System.out.println("Project start!");
+
+        new ThirstScrollPane().initThirstLevelBSc(scrlPane_1_left);
+        // <- init thirst Panel
     }
 }
