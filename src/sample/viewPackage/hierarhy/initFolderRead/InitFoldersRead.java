@@ -23,6 +23,7 @@ public class InitFoldersRead {
                 secondStep.addPosition(f2);
                // System.out.println(f2.getName() + " names f2");
             }
+            thirstStep.setSecondStep(secondStep);
             thirstStep.addPosition(thirstStep); // <- Add this in static List!
         }
 

@@ -23,7 +23,7 @@ public class Controller {
     public void initialize(){
         System.out.println("Project start!");
 
-        new ThirstScrollPane().initThirstLevelBSc(scrlPane_1_left);
+        new ThirstScrollPane().initThirstLevelBSc(scrlPane_1_left,scrlPane_2_middle);
         // <- init thirst Panel
     }
 }

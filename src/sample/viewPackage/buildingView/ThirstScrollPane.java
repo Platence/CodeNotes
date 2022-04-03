@@ -13,18 +13,16 @@ import java.util.List;
 
 public class ThirstScrollPane {
 
-    public void initThirstLevelBSc(ScrollPane pane1){
+    private SecondScrollPane secondScrollPane;
+
+    public void initThirstLevelBSc(ScrollPane pane1,ScrollPane scrlPane_2_middle){
         Accordion ac = new Accordion();
         List<ThirstStep> l1 = new ThirstStep().getAllList();
         List<TitledPane> listTP = new ArrayList<>();
 
         for (ThirstStep thirstStep : l1){
-            TitledPane tp = new TitledPane();
-            Label label = new Label(thirstStep.getFolderContent().getName());
-            tp.setContent(label);
-            listTP.add(tp);
+            listTP.add(initPanel2(thirstStep,scrlPane_2_middle));
         }
-
         addAll(pane1,ac,listTP);
     }
 
@@ -40,5 +38,15 @@ public class ThirstScrollPane {
         });
 
 
+    }
+
+
+    private TitledPane initPanel2(ThirstStep thirstStep,ScrollPane scrlPane_2_middle){
+        TitledPane tp = new TitledPane();
+        Label label = new Label(thirstStep.getFolderContent().getName());
+        tp.setContent(label);
+        secondScrollPane = new SecondScrollPane(scrlPane_2_middle,thirstStep);
+        label.setOnMouseClicked(e->secondScrollPane.paintMiddlePaneSCR());
+        return tp;
     }
 }
